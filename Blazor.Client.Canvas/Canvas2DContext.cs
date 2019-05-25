@@ -23,6 +23,11 @@ namespace Blazor.Client.Canvas
          * * when StartBatchOperation() is called, set the delegate to => await Task.Run(() => batch.Add(new object[2] { methodName, args }))
          * * * obviously this class will therefore need an enumerable to hold the batch
          * * when ExecuteBatchOperation() is called, call await _jsRuntime.InvokeAsync("canvasOperator.executeCanvasBatchOperation", batch.ToArray()) and set the delegate back to normal
+         * 
+         * * that method can allow users to perform sets or use methods with return values in the middle of creating a batch, which is not ideal
+         * * only other way I can think of is to use a new class (e.g. CanvasBatchOperation), but that would require significantly more code, and
+         * * I am concerned about the complexity of it
+         * * for the time being, can throw an exception if there is an attempt to call such a setter/method while batching
          */
         // TODO: implement interface
     }
