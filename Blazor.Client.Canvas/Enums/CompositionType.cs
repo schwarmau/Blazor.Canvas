@@ -1,0 +1,32 @@
+﻿namespace Blazor.Client.Canvas.Enums
+{
+    public enum CompositionType
+    {
+        Source_Over,
+        Source_In,
+        Source_Out,
+        Source_Atop,
+        Desination_Over,
+        Destination_In,
+        Destination_Out,
+        Destination_Atop,
+        Lighter,
+        Copy,
+        Xor,
+        Multiply,
+        Screen,
+        Overlay,
+        Darken,
+        Lighten,
+        Color_Dodge,
+        Color_Burn,
+        Hard_Light,
+        Soft_Light,
+        Difference,
+        Exclusion,
+        Hue,
+        Saturation,
+        Color,
+        Luminosity
+    }
+}
