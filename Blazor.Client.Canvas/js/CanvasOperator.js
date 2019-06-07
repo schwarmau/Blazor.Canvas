@@ -11,14 +11,12 @@ window.canvasOperator = {
         contextPrototype[methodName].apply(ctx, args);
     },
 
-    // TODO: add function for calls that need to return something
+    // TODO: add function(s) for calls that need to return something
 
-    executeCanvasBatchOperation: function (canvas, calls) {
+    executeCanvasBatch: function (canvas, calls) {
         var ctx = canvas.getContext('2d');
         calls.forEach(function (call) {
             contextPrototype[call[0]].apply(ctx, call[1]);
         });
     }
-
-    // TODO: implement batching (see Canvas2DContext comments)
 };

@@ -10,6 +10,18 @@ namespace Blazor.Client.Canvas
         [Parameter] protected long Height { get; set; }
         protected ElementRef Canvas { get; set; }
         internal ElementRef CanvasRef => Canvas;
-        public ICanvas2DContext Canvas2DContext { get => new Canvas2DContext(this); }
+        private Canvas2DContext _context;
+        public Canvas2DContext Canvas2DContext
+        {
+            get
+            {
+                if (_context == null)
+                {
+                    _context = new Canvas2DContext(this);
+                }
+
+                return _context;
+            }
+        }
     }
 }
