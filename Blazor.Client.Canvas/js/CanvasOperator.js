@@ -8,7 +8,7 @@ window.canvasOperator = {
 
     callCanvasMethod: function (canvas, methodName, args) {
         var ctx = canvas.getContext('2d');
-        contextPrototype[methodName].apply(ctx, args);
+        return contextPrototype[methodName].apply(ctx, args);
     },
 
     // TODO: add function(s) for calls that need to return something
